@@ -16,7 +16,7 @@ Part of the [Ampersand.js toolkit](http://ampersandjs.com) for building clientsi
 ## install
 
 ```
-npm install ampersand-subcollection
+npm install ampersand-paged-collection
 ```
 
 ## example
