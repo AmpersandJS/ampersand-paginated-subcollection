@@ -61,7 +61,7 @@ This is how you paginate post-init
 
 ### .length
 
-The subcollection maintains a read-only length property that simply proxies to the array length of the models it contains.
+The paged collection maintains a read-only length property that simply proxies to the array length of the models it contains.
 
 ### .models
 
@@ -73,7 +73,7 @@ This property is present and set to `true`. see [ampersand-collection](https://g
 
 ### all the underscore methods
 
-Since we're already depending on underscore for much of the functionality in this module, we also mixin underscore methods into the subcollection in the same way that Backbone does for collections.
+Since we're already depending on underscore for much of the functionality in this module, we also mixin underscore methods into the paged collection in the same way that Backbone does for collections.
 
 This means you can just call `collection.each()` or `collection.find()` to find/filter/iterate the models in the paged collection. You can see which underscore methods are included by referencing [ampersand-collection-underscore-mixin](https://github.com/AmpersandJS/ampersand-collection-underscore-mixin).
 
