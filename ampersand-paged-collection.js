@@ -19,9 +19,7 @@ extend(PagedCollection.prototype, Events, underscoreMixins, {
 
     // Update config with potentially new limit/offset
     configure: function (opts, slice) {
-        if (this._parseSpec(opts) || slice) {
-            this._reSlice();
-        }
+        if (this._parseSpec(opts) || slice) this._reSlice();
     },
 
     at: function (index) {
@@ -69,12 +67,8 @@ extend(PagedCollection.prototype, Events, underscoreMixins, {
 
         if (eventName === 'add' || eventName === 'remove') {
             //See if we're gonna get a sort even later
-            if (sortable) {
-                return;
-            }
-            if (ordered && (model.isNew || !model[this.collection.mainIndex])) {
-                return;
-            }
+            if (sortable) return;
+            if (ordered && (model.isNew || !model[this.collection.mainIndex])) return;
         }
         if (eventName.match(/^change:/)) {
             return; //We'll get a raw change later
