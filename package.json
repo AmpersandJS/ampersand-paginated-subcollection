@@ -1,15 +1,15 @@
 {
-  "name": "ampersand-paged-collection",
+  "name": "ampersand-paginated-subcollection",
   "version": "1.0.0",
   "description": "Filter an ampersand collection by limit and offset",
-  "main": "ampersand-paged-collection.js",
+  "main": "ampersand-paginated-subcollection.js",
   "scripts": {
     "start": "run-browser test/main.js",
     "test": "node test/main.js | tap-spec"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wraithgar/paged-collection.git"
+    "url": "https://github.com/AmpersandJS/ampersand-paginated-subcollection.git"
   },
   "keywords": [
     "ampersand",
@@ -20,9 +20,9 @@
   "author": "Gar <gar@andyet.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wraithgar/paged-collection/issues"
+    "url": "https://github.com/AmpersandJS/ampersand-paginated-subcollection/issues"
   },
-  "homepage": "https://github.com/wraithgar/paged-collection",
+  "homepage": "https://github.com/AmpersandJS/ampersand-paginated-subcollection",
   "devDependencies": {
     "ampersand-collection": "^1.4.0",
     "jshint": "^2.6.0",

@@ -1,7 +1,7 @@
 var test = require('tape');
 var mixins = require('ampersand-collection-underscore-mixin');
 var Collection = require('ampersand-collection').extend(mixins);
-var SubCollection = require('../ampersand-paged-collection');
+var SubCollection = require('../ampersand-paginated-subcollection');
 var Model = require('ampersand-state');
 
 // our widget model
