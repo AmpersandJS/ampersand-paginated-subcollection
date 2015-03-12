@@ -1,4 +1,8 @@
-# ampersand-paged-collection
+# ampersand-paginated-subcollection
+
+Lead Maintainer: [Michael Garvin](https://github.com/wraithgar)
+
+## Purpose
 
 Paginated subset of a collection. Only emits `reset` events.
 
@@ -10,20 +14,20 @@ affecting its parent.
 Part of the [Ampersand.js toolkit](http://ampersandjs.com) for building clientside applications.
 <!-- endhide -->
 
-[![browser support](https://ci.testling.com/ampersandjs/ampersand-parsed-collection.png)
-](https://ci.testling.com/ampersandjs/ampersand-parsed-collection)
+[![browser support](https://ci.testling.com/ampersandjs/ampersand-paginated-collection.png)
+](https://ci.testling.com/ampersandjs/ampersand-paginated-collection)
 
 ## install
 
 ```
-npm install ampersand-paged-collection
+npm install ampersand-paginated-collection
 ```
 
 ## example
 
 ```javascript
 var WidgetCollection = require('./mycollection');
-var PagedCollection = require('ampersand-paged-collection');
+var PaginatedSubcollection = require('ampersand-paginated-collection');
 
 var widgets = new WidgetCollection();
 
@@ -32,7 +36,7 @@ widgets.fetch();
 // This will create a collection-like object
 // that will only include 10 widgets starting
 // at offset 0
-var widgetPage = new PagedCollection(widgets, {
+var widgetPage = new PaginatedSubcollection(widgets, {
     limit: 10
 });
 
@@ -41,9 +45,9 @@ widgetPage.configure({offset: 10});
 ```
 ## API reference
 
-### new PagedCollection(collection, [config]);
+### new PaginatedSubcollection(collection, [config]);
 
-* `collection` {Collection} An instance of `ampersand-collection`, `ampersand-paged-collection`, or `Backbone.Collection that` contains our full set of models.
+* `collection` {Collection} An instance of `ampersand-collection`, `ampersand-paginated-subcollection`, or `Backbone.Collection that` contains our full set of models.
 * `config` {Object} [optional] The config object which can take the following options
     * `limit` {Number} [optional] If specified will limit the number of models to this maximum number.
     * `offset` {Number} Default: `0`. This is the index of the start of the current page of models to pull from `collection`
@@ -57,11 +61,11 @@ This is how you paginate post-init
 
 ### .at(index)
 
-* `index` {Number} returns model as specified index in the paged collection.
+* `index` {Number} returns model as specified index in the paginated collection.
 
 ### .length
 
-The paged collection maintains a read-only length property that simply proxies to the array length of the models it contains.
+The paginated collection maintains a read-only length property that simply proxies to the array length of the models it contains.
 
 ### .models
 
@@ -73,22 +77,22 @@ This property is present and set to `true`. see [ampersand-collection](https://g
 
 ### all the underscore methods
 
-Since we're already depending on underscore for much of the functionality in this module, we also mixin underscore methods into the paged collection in the same way that Backbone does for collections.
+Since we're already depending on underscore for much of the functionality in this module, we also mixin underscore methods into the paginated collection in the same way that Backbone does for collections.
 
-This means you can just call `collection.each()` or `collection.find()` to find/filter/iterate the models in the paged collection. You can see which underscore methods are included by referencing [ampersand-collection-underscore-mixin](https://github.com/AmpersandJS/ampersand-collection-underscore-mixin).
+This means you can just call `collection.each()` or `collection.find()` to find/filter/iterate the models in the paginated collection. You can see which underscore methods are included by referencing [ampersand-collection-underscore-mixin](https://github.com/AmpersandJS/ampersand-collection-underscore-mixin).
 
-### PagedCollection.extend(mixins...)
+### PaginatedSubcollection.extend(mixins...)
 
-PagedCollection attaches `extend` to the constructor so if you want to add custom methods to your PagedCollection constructor, it's easy:
+PaginatedSubcollection attaches `extend` to the constructor so if you want to add custom methods to your PaginatedSubcollection constructor, it's easy:
 
 ```javascript
-var PagedCollection = require('ampersand-paged-collection');
+var PaginatedSubcollection = require('ampersand-paginated-subcollection');
 
 // this exports a new constructor that includes
 // the methods you passed on the prototype while
 // maintaining the inheritance chain for instanceof
 // checks.
-module.exports = PagedCollection.extend({
+module.exports = PaginatedSubcollection.extend({
     myMethod: function () { ... },
     myOtherMethod: function () { ... }
 });
