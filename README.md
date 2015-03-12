@@ -47,7 +47,7 @@ widgetPage.configure({offset: 10});
 
 ### new PaginatedSubcollection(collection, [config]);
 
-* `collection` {Collection} An instance of `ampersand-collection`, `ampersand-paginated-subcollection`, or `Backbone.Collection that` contains our full set of models.
+* `collection` {Collection} An instance of `ampersand-collection` or `Backbone.Collection that` contains our full set of models.
 * `config` {Object} [optional] The config object which can take the following options
     * `limit` {Number} [optional] If specified will limit the number of models to this maximum number.
     * `offset` {Number} Default: `0`. This is the index of the start of the current page of models to pull from `collection`
