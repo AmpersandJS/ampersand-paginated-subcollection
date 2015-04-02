@@ -1,9 +1,8 @@
 /*AMPERSAND_VERSION*/
 /*jshint eqnull: true*/
 var Events = require('ampersand-events');
-var underscoreMixins = require('ampersand-collection-underscore-mixin');
 var classExtend = require('ampersand-class-extend');
-var extend = require('amp-extend');
+var assign = require('lodash.assign');
 var slice = Array.prototype.slice;
 
 
@@ -14,7 +13,7 @@ function PagedCollection(collection, spec) {
     this.listenTo(this.collection, 'all', this._onCollectionEvent);
 }
 
-extend(PagedCollection.prototype, Events, underscoreMixins, {
+assign(PagedCollection.prototype, Events, {
     // Public API
 
     // Update config with potentially new limit/offset
