@@ -155,3 +155,12 @@ test('reset on custom event', function (t) {
     var model = sub.at(0);
     model.trigger('custom', model);
 });
+
+test('Serialize/toJSON method', function (t) {
+    var c = new Collection();
+    var sub = new SubCollection(c);
+    c.set([{id: 'thing'}, {id: 'other'}]);
+    t.deepEqual([{id: 'thing'}, {id: 'other'}], sub.serialize());
+    t.equal(JSON.stringify([{id: 'thing'}, {id: 'other'}]), JSON.stringify(sub));
+    t.end();
+});

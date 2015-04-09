@@ -6,14 +6,14 @@ var assign = require('lodash.assign');
 var slice = Array.prototype.slice;
 
 
-function PagedCollection(collection, spec) {
+function PaginatedCollection(collection, spec) {
     this.collection = collection;
     this.configure(spec || {}, true);
     this.offset = 0;
     this.listenTo(this.collection, 'all', this._onCollectionEvent);
 }
 
-assign(PagedCollection.prototype, Events, {
+assign(PaginatedCollection.prototype, Events, {
     // Public API
 
     // Update config with potentially new limit/offset
@@ -77,18 +77,52 @@ assign(PagedCollection.prototype, Events, {
     }
 });
 
-Object.defineProperty(PagedCollection.prototype, 'length', {
+Object.defineProperty(PaginatedCollection.prototype, 'length', {
     get: function () {
         return this.models.length;
     }
 });
 
-Object.defineProperty(PagedCollection.prototype, 'isCollection', {
+Object.defineProperty(PaginatedCollection.prototype, 'isCollection', {
     get: function () {
         return true;
     }
 });
 
-PagedCollection.extend = classExtend;
+var arrayMethods = [
+    'indexOf',
+    'lastIndexOf',
+    'every',
+    'some',
+    'forEach',
+    'map',
+    'filter',
+    'reduce',
+    'reduceRight'
+];
 
-module.exports = PagedCollection;
+arrayMethods.forEach(function (method) {
+    PaginatedCollection.prototype[method] = function () {
+        return this.models[method].apply(this.models, arguments);
+    };
+});
+
+// alias each/forEach for maximum compatibility
+PaginatedCollection.prototype.each = PaginatedCollection.prototype.forEach;
+
+// methods to copy from parent
+var collectionMethods = [
+    'serialize',
+    'toJSON'
+];
+
+collectionMethods.forEach(function (method) {
+    PaginatedCollection.prototype[method] = function () {
+        return this.collection[method].apply(this, arguments);
+    };
+});
+
+
+PaginatedCollection.extend = classExtend;
+
+module.exports = PaginatedCollection;
