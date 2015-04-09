@@ -1,6 +1,6 @@
 {
   "name": "ampersand-paginated-subcollection",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Filter an ampersand collection by limit and offset",
   "main": "ampersand-paginated-subcollection.js",
   "scripts": {
