@@ -75,12 +75,6 @@ The array of filtered models with `offset` and/or `limit` applied (if set).
 
 This property is present and set to `true`. see [ampersand-collection](https://github.com/AmpersandJS/ampersand-collection#a-quick-note-about-instanceof-checks) for more info
 
-### all the underscore methods
-
-Since we're already depending on underscore for much of the functionality in this module, we also mixin underscore methods into the paginated collection in the same way that Backbone does for collections.
-
-This means you can just call `collection.each()` or `collection.find()` to find/filter/iterate the models in the paginated collection. You can see which underscore methods are included by referencing [ampersand-collection-underscore-mixin](https://github.com/AmpersandJS/ampersand-collection-underscore-mixin).
-
 ### PaginatedSubcollection.extend(mixins...)
 
 PaginatedSubcollection attaches `extend` to the constructor so if you want to add custom methods to your PaginatedSubcollection constructor, it's easy:
