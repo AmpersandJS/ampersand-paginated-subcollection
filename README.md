@@ -20,14 +20,14 @@ Part of the [Ampersand.js toolkit](http://ampersandjs.com) for building clientsi
 ## install
 
 ```
-npm install ampersand-paginated-collection
+npm install ampersand-paginated-subcollection
 ```
 
 ## example
 
 ```javascript
 var WidgetCollection = require('./mycollection');
-var PaginatedSubcollection = require('ampersand-paginated-collection');
+var PaginatedSubcollection = require('ampersand-paginated-subcollection');
 
 var widgets = new WidgetCollection();
 
