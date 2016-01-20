@@ -14,9 +14,6 @@ affecting its parent.
 Part of the [Ampersand.js toolkit](http://ampersandjs.com) for building clientside applications.
 <!-- endhide -->
 
-[![browser support](https://ci.testling.com/ampersandjs/ampersand-paginated-collection.png)
-](https://ci.testling.com/ampersandjs/ampersand-paginated-collection)
-
 ## install
 
 ```
