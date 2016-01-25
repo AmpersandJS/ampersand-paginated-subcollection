@@ -4,8 +4,9 @@
   "description": "Filter an ampersand collection by limit and offset",
   "main": "ampersand-paginated-subcollection.js",
   "scripts": {
-    "start": "run-browser test/main.js",
-    "test": "node test/main.js | tap-spec"
+    "start": "zuul --local -- test/main.js",
+    "test": "zuul --phantom -- test/main.js",
+    "test-ci": "zuul -- test/main.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,10 @@
   "devDependencies": {
     "ampersand-collection": "^1.4.5",
     "jshint": "^2.6.0",
+    "phantomjs": "^1.9.19",
     "precommit-hook": "^2.0.1",
-    "run-browser": "^2.0.1",
-    "tap-spec": "^3.0.0",
-    "tape": "^3.4.0"
+    "tape": "^3.4.0",
+    "zuul": "^3.9.0"
   },
   "files": [
     "ampersand-paginated-subcollection.js"
