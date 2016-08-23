@@ -25,20 +25,20 @@
   },
   "homepage": "https://github.com/AmpersandJS/ampersand-paginated-subcollection",
   "devDependencies": {
-    "ampersand-collection": "^1.4.5",
+    "ampersand-collection": "^2.0.0",
     "jshint": "^2.6.0",
     "phantomjs": "^1.9.19",
     "precommit-hook": "^2.0.1",
-    "tape": "^3.4.0",
-    "zuul": "^3.9.0"
+    "tape": "^4.6.0",
+    "zuul": "^3.11.0"
   },
   "files": [
     "ampersand-paginated-subcollection.js"
   ],
   "dependencies": {
-    "ampersand-class-extend": "^1.0.2",
-    "ampersand-events": "^1.1.1",
-    "ampersand-state": "^4.5.2",
-    "lodash.assign": "^3.0.0"
+    "ampersand-class-extend": "^2.0.0",
+    "ampersand-events": "^2.0.2",
+    "ampersand-state": "^5.0.2",
+    "lodash.assign": "^4.2.0"
   }
 }
