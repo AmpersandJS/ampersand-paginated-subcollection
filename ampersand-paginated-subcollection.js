@@ -118,7 +118,7 @@ var collectionMethods = [
 
 collectionMethods.forEach(function (method) {
     PaginatedCollection.prototype[method] = function () {
-        return this.collection[method].apply(this, arguments);
+        return this.collection[method].apply(this.collection, arguments);
     };
 });
 
